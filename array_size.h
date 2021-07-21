@@ -1,1 +1,1 @@
-#define array_size 8000
+#define array_size 7000

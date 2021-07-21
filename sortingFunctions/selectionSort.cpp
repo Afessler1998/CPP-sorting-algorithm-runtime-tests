@@ -1,3 +1,8 @@
+#include <array>
+#include "../array_size.h"
+#include "../helperFunctions/helperFunctions.h"
+#include "sortingFunctions.h"
+
 void selectionSort(std::array<int, array_size> &array) {
   int i, j, minIndex;
   int size = array.size();

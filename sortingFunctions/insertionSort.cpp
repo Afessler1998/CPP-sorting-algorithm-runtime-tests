@@ -1,3 +1,7 @@
+#include <array>
+#include "../array_size.h"
+#include "sortingFunctions.h"
+
 void insertionSort(std::array<int, array_size> &array) {
   int i, j, key;
   int size = array.size();

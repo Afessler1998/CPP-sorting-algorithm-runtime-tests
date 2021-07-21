@@ -1,3 +1,8 @@
+#include <array>
+#include "../array_size.h"
+#include "../helperFunctions/helperFunctions.h"
+#include "sortingFunctions.h"
+
 int partition(std::array<int, array_size> &array, int low, int high) {
   int pivot = array[high];
   int i = low - 1;

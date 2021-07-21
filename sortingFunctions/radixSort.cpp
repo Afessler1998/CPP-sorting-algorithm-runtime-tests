@@ -1,3 +1,7 @@
+#include <array>
+#include "../array_size.h"
+#include "sortingFunctions.h"
+
 int getMaxValue(std::array<int, array_size> &array) {
   int maxValue = array[0];
 

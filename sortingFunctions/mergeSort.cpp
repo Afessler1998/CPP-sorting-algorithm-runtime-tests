@@ -1,3 +1,7 @@
+#include <array>
+#include "../array_size.h"
+#include "sortingFunctions.h"
+
 void merge(std::array<int, array_size> &array, int start, int middle, int end) { 
     int const subArrayOne = middle - start + 1;
     int const subArrayTwo = end - middle;
