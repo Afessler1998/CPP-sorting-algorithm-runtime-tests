@@ -9,7 +9,7 @@ std::array<int, array_size> getAlmostSortedArray() {
 
   srand(time(NULL));
 
-  for (int i = 0; i < array_size / 10; i++) {
+  for (int i = 0; i < array_size / 5; i++) {
     int randomIndexOne = rand() % array_size + 1;
     int randomIndexTwo = rand() % array_size + 1;
     swap(sortedArray[randomIndexOne], sortedArray[randomIndexTwo]);
