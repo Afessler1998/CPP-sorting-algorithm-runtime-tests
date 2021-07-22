@@ -6,6 +6,8 @@
 
 void bubbleSort(std::array<int, array_size>&);
 
+void cycleSort(std::array<int, array_size>&);
+
 void selectionSort(std::array<int, array_size>&);
 
 void insertionSort(std::array<int, array_size>&);

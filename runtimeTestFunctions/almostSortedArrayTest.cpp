@@ -13,6 +13,7 @@ void almostSortedArrayTest() {
   const int numOfTests = 5;
   
   int bubbleSortAvgRuntime = 0;
+  int cycleSortAvgRuntime = 0;
   int selectionSortAvgRuntime = 0;
   int insertionSortAvgRuntime = 0;
   int mergeSortAvgRuntime = 0;
@@ -24,6 +25,7 @@ void almostSortedArrayTest() {
     std::array<int, array_size> almostSortedArray = getAlmostSortedArray();
 
     std::array<int, array_size> BubbleSortArray = almostSortedArray;
+    std::array<int, array_size> CycleSortArray = almostSortedArray;
     std::array<int, array_size> SelectionSortArray = almostSortedArray;
     std::array<int, array_size> InsertionSortArray = almostSortedArray;
     std::array<int, array_size> MergeSortArray = almostSortedArray;
@@ -31,6 +33,7 @@ void almostSortedArrayTest() {
     std::array<int, array_size> RadixSortArray = almostSortedArray;
 
     auto bubbleSortBind = std::bind(bubbleSort, std::ref(BubbleSortArray));
+    auto cycleSortBind = std::bind(cycleSort, std::ref(CycleSortArray));
     auto selectionSortBind = std::bind(selectionSort, std::ref(SelectionSortArray));
     auto insertionSortBind = std::bind(insertionSort, std::ref(InsertionSortArray));
     auto mergeSortBind = std::bind(mergeSort, std::ref(MergeSortArray), 0, array_size - 1);
@@ -38,6 +41,7 @@ void almostSortedArrayTest() {
     auto radixSortBind = std::bind(radixSort, std::ref(RadixSortArray));
 
     bubbleSortAvgRuntime += getRuntime(bubbleSortBind);
+    cycleSortAvgRuntime += getRuntime(cycleSortBind);
     selectionSortAvgRuntime += getRuntime(selectionSortBind);
     insertionSortAvgRuntime += getRuntime(insertionSortBind);
     mergeSortAvgRuntime += getRuntime(mergeSortBind);
@@ -46,6 +50,7 @@ void almostSortedArrayTest() {
   }
 
   bubbleSortAvgRuntime /= numOfTests;
+  cycleSortAvgRuntime /= numOfTests;
   selectionSortAvgRuntime /= numOfTests;
   insertionSortAvgRuntime /= numOfTests;
   mergeSortAvgRuntime /= numOfTests;
@@ -55,6 +60,7 @@ void almostSortedArrayTest() {
   std::cout << "Almost sorted array results:" << std::endl << std::endl;
 
   std::cout << std::setw(16) << std::left << "Bubble sort: " << std::setw(8) << std::right << bubbleSortAvgRuntime << std::endl;
+  std::cout << std::setw(16) << std::left << "Cycle sort: " << std::setw(8) << std::right << cycleSortAvgRuntime << std::endl;
   std::cout << std::setw(16) << std::left << "Selection sort: " << std::setw(8) << std::right << selectionSortAvgRuntime << std::endl;
   std::cout << std::setw(16) << std::left << "Insertion sort: " << std::setw(8) << std::right << insertionSortAvgRuntime << std::endl;
   std::cout << std::setw(16) << std::left << "Merge sort: " << std::setw(8) << std::right << mergeSortAvgRuntime << std::endl;
