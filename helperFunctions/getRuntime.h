@@ -5,11 +5,11 @@
 
 //get runtime is declared and defined in header file to prevent "undefined reference" linker error due to template use in parameters
 template <typename Function>
-double getRuntime(Function function) {
+int getRuntime(Function function) {
   auto startTime = std::chrono::high_resolution_clock::now();
   function();
   auto stopTime = std::chrono::high_resolution_clock::now();
-  double duration = std::chrono::duration_cast<std::chrono::microseconds>(stopTime - startTime).count();
+  int duration = std::chrono::duration_cast<std::chrono::microseconds>(stopTime - startTime).count();
   return duration;
 }
 

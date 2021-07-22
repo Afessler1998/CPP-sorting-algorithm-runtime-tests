@@ -1,6 +1,6 @@
+#include <array>
 #include <stdlib.h>
 #include <time.h>
-#include <array>
 #include "../array_size.h"
 #include "helperFunctions.h"
 
