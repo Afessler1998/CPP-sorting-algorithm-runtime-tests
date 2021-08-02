@@ -1,3 +1,9 @@
+/*
+Alec Fessler
+afessler1998@gmail.com
+8/2/2021
+this program tests the time various sorting algorithms take to run on a random array, sorted array, and almost sorted array
+*/
 #include <thread>
 #include "runtimeTestFunctions/runtimeTestFunctions.h"
 
