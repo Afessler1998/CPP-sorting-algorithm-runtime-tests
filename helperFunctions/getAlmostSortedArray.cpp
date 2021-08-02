@@ -4,6 +4,12 @@
 #include "../array_size.h"
 #include "helperFunctions.h"
 
+/*
+this function calls getSortedArray then randomly swaps 10% of indices before returning it
+to create an almost sorted array. If the size of the array is less than or equal to 20, a swap
+will only occur once.
+*/
+
 std::array<int, array_size> getAlmostSortedArray() {
   std::array<int, array_size> sortedArray = getSortedArray();
 

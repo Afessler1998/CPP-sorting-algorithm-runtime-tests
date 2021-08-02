@@ -1,32 +1,14 @@
 #include <thread>
 #include "runtimeTestFunctions/runtimeTestFunctions.h"
 
-#include "sortingFunctions/sortingFunctions.h"
-#include "helperFunctions/helperFunctions.h"
-#include <iostream>
-#include <array>
-#include "array_size.h"
-
 int main() {
 
-  /*std::array<int, array_size> randomArray = getRandomArray();
-
-  for (int i = 0; i < array_size; i++) {
-    std::cout << randomArray[i] << std::endl;
-  }
-
-  std::cout << std::endl;
-
-  cycleSort(randomArray);
-
-  for (int i = 0; i < array_size; i++) {
-    std::cout << randomArray[i] << std::endl;
-  }*/
-
+  //create a thread for each test so that they can run in unison since each one is somewhat slow
   std::thread t1(randomArrayTest);
   std::thread t2(sortedArrayTest);
   std::thread t3(almostSortedArrayTest);
 
+  //wait for each thread to be done before stopping the program
   t1.join();
   t2.join();
   t3.join();

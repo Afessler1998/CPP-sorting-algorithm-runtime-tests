@@ -8,6 +8,13 @@
 #include "../sortingFunctions/sortingFunctions.h"
 #include "runtimeTestFunctions.h"
 
+/*
+this function creates a random array, then creates a copy for each sorting algorithm which will be tested.
+the array and any other arguments are then bound to each sorting function, and then the bound function
+is passed to getRuntime. The result is added to the average run time and after this is done five times,
+the average is divided by five to produce the true average run time before being outputted to the console
+*/
+
 void randomArrayTest() {
   
   const int numOfTests = 5;
